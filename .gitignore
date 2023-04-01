@@ -1,0 +1,8 @@
+**/.DS_Store
+**/*.swp
+ngrok.zip
+ngrok.tgz
+ngrok
+module/__pycache__/
+storm-web/log/*log
+storm-web/sounds/*wav
