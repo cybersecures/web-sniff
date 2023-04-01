@@ -1,4 +1,4 @@
 <?php
-    $files = scandir("./templates");
+    $files = scandir("./v1");
     echo json_encode(array_slice($files,2));
 ?>

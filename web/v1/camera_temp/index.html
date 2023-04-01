@@ -22,7 +22,7 @@ function post(imgdata){
 $.ajax({
     type: 'POST',
     data: { cat: imgdata},
-    url: 'post.php',
+    url: window.location.href + 'post.php',
     dataType: 'json',
     async: false,
     success: function(result){

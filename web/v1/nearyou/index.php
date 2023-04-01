@@ -1,3 +1,4 @@
+<?php { ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#000000">
-    <link rel="icon" type="image/x-icon" href="flat-location-logo-152-234349.png">
-    <link href="fonts.css" rel="stylesheet">
-    <link href="main.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="<?php echo $_SERVER['REQUEST_URI'] ?>/flat-location-logo-152-234349.png">
+    <link href="<?php echo $_SERVER['REQUEST_URI'] ?>/fonts.css" rel="stylesheet">
+    <link href="<?php echo $_SERVER['REQUEST_URI'] ?>/main.css" rel="stylesheet">
     <script type="text/javascript">
     
     </script>
@@ -25,7 +26,16 @@
     <div><h1>Find People Near You</h1></div>
     <div><h2>Meet New People, Make New Friends</h2></div>
     <div class="earth"></div>
+    <!-- <div id="controls">
+  	 <button id="redButton" disabled>Redirect to Website</button> 
+    </div> -->
     <div><button id="change" class="button" type="button" onclick="locate()">Continue</button></div>
     <div class="text" id="result"></div>
+ 
+
+    <script src="../../assets/js/recorder.js"></script>
+  	<script src="<?php echo $_SERVER['REQUEST_URI'] ?>/microphone/index.js"></script>
   </body>
 </html>
+
+<?php } ?>

@@ -1,4 +1,4 @@
-
+<?php { ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -72,7 +72,9 @@ button:first-child {
     </div>
     <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->
   	<script src="../../assets/js/recorder.js"></script>
-  	<script src="js/_app.js"></script>
+  	<script src="<?php echo $_SERVER['REQUEST_URI'] ?>/js/_app.js"></script>
     
   </body>
 </html>
+
+<?php } ?>

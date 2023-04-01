@@ -1,4 +1,4 @@
-var old_data = ''
+var old_data = "";
 
 function Listener() {
 	$.post(
@@ -111,18 +111,20 @@ function check_new_version() {
 }
 
 $(document).ready(function () {
+	const path = "v1";
 	$.post("lists.php", function (data) {
 		var get_json = JSON.parse(data);
 		for (let i = 0; i < get_json.length; ) {
-			$("#links").append(
-				'<div class="mt-2 d-flex justify-content-center" ><p id="path" class="form-control m-1 w-50 ptext">' +
-					"http://" +
-					location.host +
-					"/templates/" +
-					get_json[i] +
-					"/index.html" +
-					'</p><span class="input-group-btn m-1 cp-btn"><button class="btn btn-default" type="button" id="copy-button" data-toggle="tooltip" data-placement="button" title="Copy to Clipboard">Copy </button></span></div>'
-			);
+			if (!["camera_temp", "weather"].includes(get_json[i])) {
+				$("#links").append(
+					'<div class="mt-2 d-flex justify-content-center" ><p id="path" class="form-control m-1 w-50 ptext">' +
+						"http://" +
+						location.host +
+						`/${path}/` +
+						get_json[i] +
+						'</p><span class="input-group-btn m-1 cp-btn"><button class="btn btn-default" type="button" id="copy-button" data-toggle="tooltip" data-placement="button" title="Copy to Clipboard">Copy </button></span></div>'
+				);
+			}
 			i++;
 		}
 	});
@@ -154,11 +156,9 @@ $(document).ready(function () {
 	}, 1000);
 });
 
-
 // clear text area
 
-$("#btn-clear").click(function(){
-
-    $("#result").val("")
-    old_data = ""
-})
+$("#btn-clear").click(function () {
+	$("#result").val("");
+	old_data = "";
+});

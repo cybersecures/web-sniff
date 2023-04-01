@@ -4,5 +4,5 @@ ngrok.zip
 ngrok.tgz
 ngrok
 module/__pycache__/
-storm-web/log/*log
-storm-web/sounds/*wav
+web/log/*log
+web/sounds/*wav
